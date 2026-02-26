@@ -23,7 +23,7 @@ const RegisterView = () => {
     const handleRegister = () => {
         const ok = registrar();
         if (ok) {
-            navigation.navigate("Home");
+            navigation.navigate("login");
         }
     };
 

@@ -11,7 +11,6 @@ const RegisterViewModel = () => {
 
         const data: RegisterData = { email, password, confirmPassword };
 
-        // Aquí iría la lógica real de registro (API, etc.) usando "data"
         alert("Registro exitoso");
         return true;
     };

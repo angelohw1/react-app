@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 28,
         fontWeight: "700",
-        color: "#0900ae",
+        color: "#4A90E2",
         marginBottom: 30,
     },
     label: {

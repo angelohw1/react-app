@@ -11,9 +11,9 @@ export const styles = StyleSheet.create({
         marginTop: 50,
         marginHorizontal: "auto",
         textAlign: "center",
-        fontSize: 28,
+        fontSize: 40,
         fontWeight: "700",
-        color: "#0900ae",
+        color: "#4A90E2",
         marginBottom: 30,
     },
     label: {
@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
         marginHorizontal: "auto",
         borderRadius: 10,
         paddingVertical: 14,
-        backgroundColor: "#0900ae",
+        backgroundColor: "#4A90E2",
         alignItems: "center",
     },
     buttonText: {
