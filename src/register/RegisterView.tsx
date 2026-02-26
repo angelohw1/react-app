@@ -1,45 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import { ScrollView, Text, TextInput, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { styles as loginStyles } from "../login/LoginStyle";
+import { styles } from "./RegisterStyle";
 import { ButtonWithIcon } from "../sharedComponents/ButtonWithIcon";
 import { RootStackParamList } from "presentation/navigation/RootNavigator";
+import viewModel from "./RegisterViewModel";
 
 const RegisterView = () => {
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [confirmPassword, setConfirmPassword] = useState<string>("");
+    const {
+        email,
+        password,
+        confirmPassword,
+        setEmail,
+        setPassword,
+        setConfirmPassword,
+        registrar,
+    } = viewModel();
 
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
     const handleRegister = () => {
-        if (!email.includes("@")) {
-            alert("Correo electrónico no válido, hace falta '@'");
-            return;
+        const ok = registrar();
+        if (ok) {
+            navigation.navigate("Home");
         }
-        if (password.length < 6) {
-            alert("La contraseña debe tener mínimo 6 caracteres");
-            return;
-        }
-        if (password !== confirmPassword) {
-            alert("Las contraseñas no coinciden");
-            return;
-        }
-
-        // Aquí iría la lógica real de registro (API, etc.)
-        alert("Registro exitoso");
-        navigation.navigate("Home");
     };
 
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}>
             <View style={{ alignItems: "center" }}>
-                <Text style={loginStyles.titulo}>Crear cuenta</Text>
+                <Text style={styles.titulo}>Unete</Text>
 
-                <Text style={loginStyles.label}>Correo electrónico</Text>
+                <Text style={styles.label}>Correo electrónico</Text>
                 <TextInput
-                    style={loginStyles.textInput}
+                    style={styles.textInput}
                     placeholder="usuario@example.com"
                     keyboardType="email-address"
                     autoCapitalize="none"
@@ -47,18 +42,18 @@ const RegisterView = () => {
                     value={email}
                 />
 
-                <Text style={loginStyles.label}>Contraseña</Text>
+                <Text style={styles.label}>Contraseña</Text>
                 <TextInput
-                    style={loginStyles.textInput}
+                    style={styles.textInput}
                     placeholder="••••••••"
                     secureTextEntry
                     onChangeText={setPassword}
                     value={password}
                 />
 
-                <Text style={loginStyles.label}>Confirmar contraseña</Text>
+                <Text style={styles.label}>Confirmar contraseña</Text>
                 <TextInput
-                    style={loginStyles.textInput}
+                    style={styles.textInput}
                     placeholder="••••••••"
                     secureTextEntry
                     onChangeText={setConfirmPassword}
@@ -67,7 +62,7 @@ const RegisterView = () => {
 
                 <ButtonWithIcon
                     text="Registrarme"
-                    fnDeOtroComponente={handleRegister}
+                    componente={handleRegister}
                     type="lg"
                     iconName="user-plus"
                 />

@@ -1,11 +1,13 @@
 import React from "react";
-import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
 import { styles } from "./LoginStyle";
 import viewModel from "./LoginViewModel";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "presentation/navigation/RootNavigator";
 import { ButtonWithIcon } from "../sharedComponents/ButtonWithIcon";
+
+const logo = require("../assets/logo.png");
 
 const LoginView = () => {
     const { iniciarSesion, setEmail, setPassword } = viewModel();
@@ -14,6 +16,11 @@ const LoginView = () => {
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}>
             <View style={{ alignItems: "center" }}>
+                <Image
+                    source={logo}
+                    style={styles.logo}
+                    resizeMode="contain"
+                />
                 <Text style={styles.titulo}>Iniciar sesión</Text>
 
                 <Text style={styles.label}>Correo electrónico</Text>
@@ -35,10 +42,7 @@ const LoginView = () => {
 
                 <ButtonWithIcon
                     text="Entrar"
-                    fnDeOtroComponente={() => {
-                        iniciarSesion();
-                        navigation.navigate("Home");
-                    }}
+                    componente={iniciarSesion}
                     type="lg"
                     iconName="sign-in"
                 />

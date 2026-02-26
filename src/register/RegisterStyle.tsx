@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         marginBottom: 20
     },
     titulo: {
-        width: '90%',
+        width: "90%",
         marginTop: 50,
         marginHorizontal: "auto",
         textAlign: "center",
@@ -18,14 +18,14 @@ export const styles = StyleSheet.create({
     },
     label: {
         fontSize: 16,
-        width: '90%',
+        width: "90%",
         marginHorizontal: "auto",
         marginBottom: 8,
         color: "#374151",
         fontWeight: "500",
     },
     textInput: {
-        width: '90%',
+        width: "90%",
         marginHorizontal: "auto",
         borderWidth: 1,
         borderRadius: 8,
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
         color: "#111827",
     },
     buttonSubmit: {
-        width: '90%',
+        width: "90%",
         marginHorizontal: "auto",
         borderRadius: 10,
         paddingVertical: 14,
@@ -50,13 +50,5 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "600",
     },
-    registroContainer: {
-        marginTop: 25,
-        alignItems: "center",
-    },
-    registroText: {
-        color: "#0900ae",
-        textDecorationLine: "underline",
-        fontSize: 14,
-    },
 });
+

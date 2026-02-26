@@ -4,7 +4,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 interface Props {
     text: string;
-    fnDeOtroComponente: () => void;
+    componente: () => void;
     type?: "sm" | "md" | "lg";
     iconName?: string;
 }
@@ -23,7 +23,7 @@ export const ButtonWithIcon: React.FC<Props> = ({ text, fnDeOtroComponente, type
 const styles = StyleSheet.create({
     button: {
         flexDirection: "row",
-        backgroundColor: "#6366f1",
+        backgroundColor: "#0900ae",
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 10,
